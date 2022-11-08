@@ -117,7 +117,6 @@ public class StatesData {
 
     // Store a new state in the database.
     public State storeState( State state ) {
-
         // Prepare the values for all of the necessary columns in the table
         // and set their values to the variables of the State argument.
         // This is how we are providing persistence to a State (Java object) instance
