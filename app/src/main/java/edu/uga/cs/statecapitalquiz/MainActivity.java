@@ -4,8 +4,10 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,10 +18,27 @@ public class MainActivity extends AppCompatActivity {
 
     private StatesData statesData = null;
 
+    private Button startQuiz;
+    private Button viewResults;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        startQuiz = findViewById(R.id.button);
+        viewResults = findViewById(R.id.button2);
+
+        startQuiz.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, QuizActivity.class);
+            startActivity(intent);
+        });
+
+        viewResults.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, ResultsActivity.class);
+            startActivity(intent);
+        });
+
         statesData = new StatesData(this);
         try {
             InputStream ins = getAssets().open("state_capitals.csv");
