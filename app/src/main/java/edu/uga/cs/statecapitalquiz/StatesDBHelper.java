@@ -1,10 +1,18 @@
 package edu.uga.cs.statecapitalquiz;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class StatesDBHelper {
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class StatesDBHelper extends SQLiteOpenHelper {
     private static final String DEBUG_TAG = "StatesDBHelper";
 
     private static final String DB_NAME = "states.db";
@@ -43,7 +51,7 @@ public class StatesDBHelper {
     // Note that the constructor is private!
     // So, it can be called only from
     // this class, in the getInstance method.
-    private StatesDBHelper(Context context ) {
+    private StatesDBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
