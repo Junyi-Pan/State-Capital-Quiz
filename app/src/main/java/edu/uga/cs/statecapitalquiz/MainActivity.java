@@ -1,13 +1,11 @@
 package edu.uga.cs.statecapitalquiz;
 
-import static android.app.PendingIntent.getActivity;
 import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        statesData = new StatesData(this);
         try {
             InputStream ins = getAssets().open("state_capitals.csv");
             BufferedReader reader = new BufferedReader(new InputStreamReader(ins));
