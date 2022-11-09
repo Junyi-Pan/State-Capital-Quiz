@@ -36,17 +36,17 @@ public class StatesDBHelper extends SQLiteOpenHelper {
     // A Create table SQL statement to create a table for job leads.
     // Note that _id is an auto increment primary key, i.e. the database will
     // automatically generate unique id values as keys.
-    private static final String CREATE_STATES =
-            "create table " + TABLE_STATES + " ("
-                    + STATES_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + STATES_COLUMN_NAME + " TEXT, "
-                    + STATES_COLUMN_CAPITAL + " TEXT, "
-                    + STATES_COLUMN_CITY1 + " TEXT, "
-                    + STATES_COLUMN_CITY2 + " TEXT, "
-                    + STATES_COLUMN_STATEHOOD + " TEXT, "
-                    + STATES_COLUMN_CAPITALSINCE + " TEXT, "
-                    + STATES_COLUMN_CAPITALRANK + " TEXT"
-                    + ")";
+    //private static final String CREATE_STATES =
+    //        "create table " + TABLE_STATES + " ("
+    //                + STATES_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+    //                + STATES_COLUMN_NAME + " TEXT, "
+    //               + STATES_COLUMN_CAPITAL + " TEXT, "
+    //                + STATES_COLUMN_CITY1 + " TEXT, "
+    //                + STATES_COLUMN_CITY2 + " TEXT, "
+    //                + STATES_COLUMN_STATEHOOD + " TEXT, "
+    //                + STATES_COLUMN_CAPITALSINCE + " TEXT, "
+    //                + STATES_COLUMN_CAPITALRANK + " TEXT"
+    //                + ")";
 
     // Note that the constructor is private!
     // So, it can be called only from
@@ -69,7 +69,7 @@ public class StatesDBHelper extends SQLiteOpenHelper {
     // it does not exist yet.
     @Override
     public void onCreate( SQLiteDatabase db ) {
-        db.execSQL( CREATE_STATES );
+
         Log.d( DEBUG_TAG, "Table " + TABLE_STATES + " created" );
     }
 

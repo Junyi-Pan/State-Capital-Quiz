@@ -39,33 +39,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        statesData = new StatesData(this);
-        try {
-            InputStream ins = getAssets().open("state_capitals.csv");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(ins));
-            String line;
-            reader.readLine();
-            try {
-                while ((line = reader.readLine()) != null) {
-                    String[] token = line.split(",");
-                    State state = new State();
-                    state.setStateName(token[0]);
-                    state.setCapital(token[1]);
-                    state.setCity1(token[2]);
-                    state.setCity2(token[3]);
-                    state.setStateHood(token[4]);
-                    state.setCapitalSince(token[5]);
-                    state.setCapitalRank(token[6]);
-                    new StateDBWriter().execute(state);
-                }
-            } catch (IOException e) {
-                System.out.print("something wrong");
-            }
-        } catch (IOException e) {
-            System.out.print("file doesn't exist");
-        }
     }
-
+/*
     // This is an AsyncTask class (it extends AsyncTask) to perform DB writing of a job lead, asynchronously.
     public class StateDBWriter extends AsyncTask<State, State> {
 
@@ -87,4 +62,6 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "State saved: " + state );
         }
     }
+
+*/
 }
