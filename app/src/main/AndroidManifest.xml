@@ -13,6 +13,13 @@
         android:theme="@style/Theme.StateCapitalQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".QuizCompleted"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ResultsActivity"
             android:exported="false">
             <meta-data
