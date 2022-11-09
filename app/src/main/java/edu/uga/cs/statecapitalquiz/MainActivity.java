@@ -1,22 +1,12 @@
 package edu.uga.cs.statecapitalquiz;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 public class MainActivity extends AppCompatActivity {
-
-    private StatesData statesData = null;
 
     private Button startQuiz;
     private Button viewResults;
@@ -42,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     }
 /*
     // This is an AsyncTask class (it extends AsyncTask) to perform DB writing of a job lead, asynchronously.
-    public class StateDBWriter extends AsyncTask<State, State> {
+    public class StateDBWriter extends AsyncTask<Quiz, Quiz> {
 
         // This method will run as a background process to write into db.
         // It will be automatically invoked by Android, when we call the execute method
         // in the onClick listener of the Save button.
         @Override
-        protected State doInBackground( State... states ) {
+        protected Quiz doInBackground( Quiz... states ) {
             statesData.storeState(states[0]);
             return states[0];
         }
@@ -57,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         // That object will be passed as argument to onPostExecute.
         // onPostExecute is like the notify method in an asynchronous method call discussed in class.
         @Override
-        protected void onPostExecute( State state ) {
+        protected void onPostExecute( Quiz state ) {
             // Show a quick confirmation message
-            Log.d(TAG, "State saved: " + state );
+            Log.d(TAG, "Quiz saved: " + state );
         }
     }
 
